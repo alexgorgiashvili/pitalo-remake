@@ -36,20 +36,44 @@
 
 
 // Geo Inputs
+let geoinput = $(".geo_input");
+let gearea = $(".geo_input_area");
+$(document).on("keypress", geoinput, function (event) {
+    return suppressNonEng(event);
+});
 
-// $(document).on("keypress", "input[type='text']", function (event) {
-//     return suppressNonEng(event);
-// });
+function suppressNonEng(EventKey) {
+var key = EventKey.which || EventKey.keyCode;
+console.log(key);
+if (key < 4304 || key > 4336)  { 
+    $(".geo_key").text("წერე ქართულად!");
+    setInterval(function(){ 
+        $(".geo_key").empty();
+      }, 2000);
+     return false; 
+    }else {
+     return true; }
+}
+$(document).on("keypress", geoarea, function (event) {
+    return suppressNonEng(event);
+});
 
-// function suppressNonEng(EventKey) {
-// var key = EventKey.which || EventKey.keyCode;
-// console.log(key);
-// if (key < 128) { 
-//     alert("წერე ქართულად!");
-//      return false; 
-//     }else {
-//      return true; }
-// }
-
+function suppressNonEng(EventKey) {
+var key = EventKey.which || EventKey.keyCode;
+console.log(key);
+if(key > 122 || key < 97)
+{
+    return true;
+}
+if (key < 4304 || key > 4336)  { 
+    $(".geo_key_area").text("წერე ქართულად!");
+    setInterval(function(){ 
+        $(".geo_key_area").empty();
+      }, 2000);
+     return false; 
+}else{
+    return true;
+}
+}
     
   

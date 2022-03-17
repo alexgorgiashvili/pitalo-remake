@@ -22,7 +22,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @livewireStyles
 </head>
-<body oncopy="return false" oncut="return false" onpaste="return false">
+<body >
     <!-- Sign form -->
     
     <livewire:sign-in-up/>

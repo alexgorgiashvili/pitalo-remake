@@ -18,18 +18,20 @@ class="position-absolute w-100">
       </div> --}}
     <div class="mb-3">
       <label for="title" class="form-label">Add Poll </label>
-      <input  wire:model.defer='title' name="title" lang="is" type="text" class="form-control " >
+      <input  wire:model.defer='title' name="title" lang="is" type="text" class="form-control geo_input " ondragstart="return false;" ondrop="return false;" onpaste="return false" >
       @error('title')
       <p class="text-danger">{{ $message }}</p>  
       @enderror
+      <p class="text-danger geo_key"></p>
     </div>
     <div class="form-floating mb-3">
         <textarea wire:model.defer='description'  data-gramm="false"
-        class="form-control txt-area p-2" name="description" maxlength="100"></textarea>
+        class="form-control txt-area p-2 geo_input_area" name="description" maxlength="100"></textarea>
         @error('description')
         <p class="text-danger">{{ $message }}</p>
           
         @enderror
+        <p class="text-danger geo_key_area"></p>
     </div>
 
         <input wire:model='image' name="image" class="form-control" type="file">
